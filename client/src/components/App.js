@@ -1,32 +1,34 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
-/* Bad Navigation
-1.) Adding <a> (anchor) tag 
-2.) browser issues request to localhost:3000
-3.) development server response with index.html
-4.) browser receives index.html file, dumps old HTML file it was showing 
-(this includes all React/Redux state data
-5.) index.html lists js files in script tags; browser downloads/executes the scripts
-6.) app starts */
+/* Bad Navigation in React Router */
+// 1.) Adding <a> (anchor) tag 
+// 2.) Browser issues request to localhost:3000
+// 3.) Development server response with index.html
+// 4.) Browser receives index.html file, dumps old HTML file it was showing 
+// (this includes all React/Redux state data) - this means refresh = wipe (NOT GOOD!!!)
+// 5.) index.html lists js files in script tags; browser downloads/executes the scripts
+// 6.) App starts */
 
 const PageOne = () => {
   return <div>
       PageOne
 
-      BAD! Don't do the below!
+      GOOD! Use the Link Tag with the to property.
       <br />
-      <a href="/pagetwo">Page 2</a>
+      <Link to="/pagetwo">Page 2</Link>
       </div>;
 };
 
 const PageTwo = () => {
   return <div>
       PageTwo
-      
-      BAD! Don't do the below!
       <br />
-      <a href="/">Page 1</a>
+      <button>Click Me!</button>
+      <br />
+      GOOD! Use the Link Tag with the to property.
+      <br />
+      <Link to="/">Page 1</Link>
       </div>;
 };
 
