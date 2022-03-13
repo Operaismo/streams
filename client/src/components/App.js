@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 /* Bad Navigation in React Router */
 // 1.) Adding <a> (anchor) tag 
@@ -47,10 +47,10 @@ const PageTwo = () => {
 const App = () => {
   return (
     <div>
-      <HashRouter>
+      <BrowserRouter>
         <Route path="/" exact component={PageOne} />
         <Route path="/pagetwo" component={PageTwo} />
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 };
