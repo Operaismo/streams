@@ -14,3 +14,5 @@ class GoogleAuth extends React.Component {
     return <div>Google Auth</div>;
   }
 }
+
+export default GoogleAuth;
