@@ -1,7 +1,16 @@
-import React from 'react';
+import React from "react";
 
 class GoogleAuth extends React.Component {
-    render() {
-        return <div>Google Auth</div>;
-    }
+  componentDidMount() {
+    window.gapi.load("client:auth2", () => {
+      window.gapi.client.init({
+        clientId:
+          "271062148777-s32fovlsh62ehkngor36r2hdl0f42ru8.apps.googleusercontent.com",
+        scope: 'email'
+      });
+    });
+  }
+  render() {
+    return <div>Google Auth</div>;
+  }
 }
